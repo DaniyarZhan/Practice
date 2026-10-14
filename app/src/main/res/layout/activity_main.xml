@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#409000"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonStartHttp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="onClickStart"
+        android:text="@string/http"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStartStream"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonStartStream"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="onClickStart"
+        android:text="@string/stream"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonStartHttp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonStartSD"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onClickStart"
+        android:text="@string/sd"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStartUri"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartHttp" />
+
+    <Button
+        android:id="@+id/buttonStartUri"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onClickStart"
+        android:text="@string/uri"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStartRaw"
+        app:layout_constraintStart_toEndOf="@+id/buttonStartSD"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartHttp" />
+
+    <Button
+        android:id="@+id/buttonStartRaw"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onClickStart"
+        android:text="@string/raw"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonStartUri"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartHttp" />
+
+    <ImageView
+        android:id="@+id/imageViewCover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartSD" />
+
+    <Button
+        android:id="@+id/buttonPause"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="@string/pause"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBackward"
+        app:layout_constraintEnd_toStartOf="@+id/buttonResume"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonResume"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="@string/resume"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonForward"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStop"
+        app:layout_constraintStart_toEndOf="@+id/buttonPause" />
+
+    <Button
+        android:id="@+id/buttonStop"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="@string/stop"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInfo"
+        app:layout_constraintEnd_toStartOf="@+id/checkboxLoop"
+        app:layout_constraintStart_toEndOf="@+id/buttonResume" />
+
+    <CheckBox
+        android:id="@+id/checkboxLoop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="@string/loop"
+        android:textColor="#00E5FF"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonStop" />
+
+    <Button
+        android:id="@+id/buttonBackward"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="@string/backward"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonForward"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonForward"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="@string/forward"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInfo"
+        app:layout_constraintStart_toEndOf="@+id/buttonBackward" />
+
+    <Button
+        android:id="@+id/buttonInfo"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="@string/info"
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonForward" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
